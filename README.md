@@ -18,6 +18,6 @@ python3 redirect -h
 
 # Launch 🚀
 
-<code>python3 redirect.py</code>
+<code>python3 redirect.py -list urls.txt -url google.com </code>
 
 # DICSLAIMER ⚠️
