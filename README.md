@@ -6,10 +6,10 @@
 git clone https://github.com/Jhonsonwannaa/Open-redirect
   
 cd Open-redirect
-
+<code>
 pip install -r requirements.txt
 
-python3 redirect -h
+<code>python3 redirect -h
 
 <img src="https://i.postimg.cc/3wJMvWQC/disclame.png" alt="" width="470" height="290">
 
