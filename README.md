@@ -24,5 +24,5 @@ python3 redirect -h
 
 <code>
 Use this tool in a legal framework or training
-</code>code>
+</code>
 
