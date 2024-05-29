@@ -11,7 +11,10 @@ cd Open-redirect
 <code>
 pip install -r requirements.txt
 </code>
-<code>python3 redirect -h</code>
+
+<code>
+python3 redirect -h
+</code>
 
 <img src="https://i.postimg.cc/3wJMvWQC/disclame.png" alt="" width="470" height="290">
 
