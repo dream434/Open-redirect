@@ -21,3 +21,8 @@ python3 redirect -h
 <code>python3 redirect.py -list urls.txt -url google.com </code>
 
 # DICSLAIMER ⚠️
+
+<code>
+Use this tool in a legal framework or training
+</code>code>
+
