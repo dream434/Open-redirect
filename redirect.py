@@ -30,9 +30,9 @@ def main(list,url):
 
                
                data={i:url_destination}
-               r=requests.get(strip_file,headers=data,allow_redirects=False,verify=False,timeout=30)
+               r=requests.get(strip_file,headers=data,allow_redirects=False,timeout=30)
                
-               if r.headers['location'] :
+               if r.status_code==301 or r.status_code==301 :
                       if args.url  in r.headers['location']: 
                          print(Fore.GREEN + Style.BRIGHT +f'{strip_file} Vuln Found headers vuln is {i}' + Style.RESET_ALL) 
                       else: 
@@ -40,7 +40,7 @@ def main(list,url):
                
                else:
                   print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
- 
+    
    except requests.exceptions.MissingSchema:
             print('')
    except requests.exceptions.ConnectionError:
@@ -55,5 +55,4 @@ if __name__=='__main__':
 
        
        main(args.list, args.url)
-     
      
