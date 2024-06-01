@@ -23,7 +23,7 @@ def main(list,url):
            strip_file=files.strip()
            session= requests.session()
            url_destination=url
-           headers =["Host","X-Forwarded-For","Referer","Content-Location","Link","Set-Cookie","X-Real-IP","X-Proxy-URL","X-Forwarded-Proto","X-Remote-Addr","X-Forwarded-Host","X-Origin"
+           headers =["X-Host","X-Forwarded-Server","X-HTTP-Host-Override","Host","X-Forwarded-For","Referer","Content-Location","Link","Set-Cookie","X-Real-IP","X-Proxy-URL","X-Forwarded-Proto","X-Remote-Addr","X-Forwarded-Host","X-Origin"
            ]
 
            for i in headers:
@@ -45,7 +45,7 @@ def main(list,url):
             print('')
    except requests.exceptions.ConnectionError:
             print(Fore.BLUE + Style.BRIGHT +f'{strip_file} DNS problem or data connexion' + Style.RESET_ALL) 
-
+ 
 if __name__=='__main__':
      
        parser = argparse.ArgumentParser(description="Openredirect")
@@ -55,4 +55,8 @@ if __name__=='__main__':
 
        
        main(args.list, args.url)
+     
+
+
+     
      
