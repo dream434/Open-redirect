@@ -17,26 +17,34 @@ def banner ():
 
 banner ()
 def main(list,url):
-
+   try :
      with open(list, 'r') as file:
        for files in file:
            strip_file=files.strip()
            session= requests.session()
            url_destination=url
-           headers =["Host","X-Forwarded-For","Referer","Content-Location","Link","Set-Cookie","X-Real-IP","X-Proxy-URL","X-Forwarded-Proto""X-Remote-Addr","X-Forwarded-Host","X-Origin"
+           headers =["Host","X-Forwarded-For","Referer","Content-Location","Link","Set-Cookie","X-Real-IP","X-Proxy-URL","X-Forwarded-Proto","X-Remote-Addr","X-Forwarded-Host","X-Origin"
            ]
 
            for i in headers:
 
-               r=i
+               
                data={i:url_destination}
-               r=requests.get(strip_file,headers=data,allow_redirects=False)
-               if url_destination in r.headers['Location'] :
-                      print(Fore.GREEN + Style.BRIGHT +f'{strip_file} Vuln Found headers vuln is {i}' + Style.RESET_ALL) 
-               else: 
-                      print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
-                
-
+               r=requests.get(strip_file,headers=data,allow_redirects=False,verify=False,timeout=30)
+               
+               if r.headers['location'] :
+                      if args.url  in r.headers['location']: 
+                         print(Fore.GREEN + Style.BRIGHT +f'{strip_file} Vuln Found headers vuln is {i}' + Style.RESET_ALL) 
+                      else: 
+                         print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
+               
+               else:
+                  print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
+ 
+   except requests.exceptions.MissingSchema:
+            print('')
+   except requests.exceptions.ConnectionError:
+            print(Fore.BLUE + Style.BRIGHT +f'{strip_file} DNS problem or data connexion' + Style.RESET_ALL) 
 
 if __name__=='__main__':
      
