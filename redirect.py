@@ -1,7 +1,7 @@
 import requests
 from colorama import Fore, Style
 import argparse
-
+import threading
 
 def banner ():
      ban='''  ____                   ____           ___                __ 
@@ -29,32 +29,41 @@ def main(list,url):
            for i in headers:
 
                
-               data={i:url_destination}
-               r=requests.get(strip_file,headers=data,allow_redirects=False,timeout=30)
+             data={i:url_destination}
+             r=requests.get(strip_file,headers=data,allow_redirects=False,timeout=100)
+       
                
-               if r.status_code==301 or r.status_code==301 :
+             if r.status_code==301 or r.status_code==301 :
                       if args.url  in r.headers['location']: 
                          print(Fore.GREEN + Style.BRIGHT +f'{strip_file} Vuln Found headers vuln is {i}' + Style.RESET_ALL) 
                       else: 
                          print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
                
-               else:
-                  print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
-    
-   except requests.exceptions.MissingSchema:
-            print('')
+             else:
+               print(Fore.RED + Style.BRIGHT +f'{strip_file} No Vuln Found headers {i}' + Style.RESET_ALL) 
+            
    except requests.exceptions.ConnectionError:
             print(Fore.BLUE + Style.BRIGHT +f'{strip_file} DNS problem or data connexion' + Style.RESET_ALL) 
- 
+             
+            
+   except requests.exceptions.MissingSchema:
+            print('')
+
 if __name__=='__main__':
      
+
+      
        parser = argparse.ArgumentParser(description="Openredirect")
        parser.add_argument("-list", "--list", dest="list", help="list urls", required=True)
        parser.add_argument("-url", "--url", dest="url", help="url redirection", required=True)     
        args = parser.parse_args()
 
        
-       main(args.list, args.url)
+       
+       thread = threading.Thread(target=main, args=(args.list, args.url))
+       thread.start()
+       thread.join(timeout=5)
+                                
      
 
 
