@@ -2,6 +2,8 @@ import requests
 from colorama import Fore, Style
 import argparse
 import threading
+from concurrent.futures import ThreadPoolExecutor
+
 
 def banner ():
      ban='''  ____                   ____           ___                __ 
@@ -16,6 +18,7 @@ def banner ():
      print(Fore.YELLOW + Style.BRIGHT +f'{ban}' + Style.RESET_ALL+'\n\n') 
 
 banner ()
+
 def main(list,url):
    try :
      with open(list, 'r') as file:
@@ -49,6 +52,19 @@ def main(list,url):
    except requests.exceptions.MissingSchema:
             print('')
 
+
+def threads(list, url):
+
+  try:
+    with ThreadPoolExecutor(max_workers=30) as executor:
+        futures = executor.submit(main,list,url) 
+        for future in futures:
+            result = future.result()
+            print(result)
+  
+  except TypeError:
+        print('')
+
 if __name__=='__main__':
      
 
@@ -58,12 +74,11 @@ if __name__=='__main__':
        parser.add_argument("-url", "--url", dest="url", help="url redirection", required=True)     
        args = parser.parse_args()
 
+            
+       threads(args.list,args.url) 
+
        
-       
-       thread = threading.Thread(target=main, args=(args.list, args.url))
-       thread.start()
-       thread.join(timeout=5)
-                                
+        
      
 
 
