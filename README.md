@@ -16,7 +16,6 @@ pip install -r requirements.txt
 python3 redirect.py -h
 </code>
 
-<img src="https://i.postimg.cc/3wJMvWQC/disclame.png" alt="" width="470" height="290">
 
 
 
