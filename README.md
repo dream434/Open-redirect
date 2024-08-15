@@ -15,6 +15,8 @@
 
 <code>python3 redirect.py -list urls.txt -url google.com </code>
 
+<code>python3 exploit.py http://exemple.com  30 </code>
+
 ## Warning  ⚠️
 
 To use this tool for legal purposes 
