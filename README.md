@@ -1,32 +1,27 @@
-# Open-redirect
+# Open-redirect 💥
 
-# Installation ✏️
+# finder-subdomain-and-active-domain
 
-<code>
-git clone https://github.com/Jhonsonwannaa/Open-redirect
-</code>
-<code>  
-cd Open-redirect
-</code>
-<code>
-pip install -r requirements.txt
-</code>
+## Installation 🚀
 
-<code>
-python3 redirect.py -h
-</code>
+<code>git clone https://github.com/Jhonsonwannaa/Open-redirect</code>
 
 
+<code>cd Open-redirect </code>
 
 
+<code>pip install -r requirements.txt </code>
 
-# Launch 🚀
+## Usage 🎮
+
 
 <code>python3 redirect.py -list urls.txt -url google.com </code>
 
-# DICSLAIMER ⚠️
+## Warning  ⚠️
 
-<code>
-Use this tool in a legal framework or training
-</code>
+To use this tool for legal purposes 
+
+
+
+
 
