@@ -1,6 +1,4 @@
-# Open-redirect 💥
-
-# finder-subdomain-and-active-domain
+# Open-redirect
 
 ## Installation 🚀
 
