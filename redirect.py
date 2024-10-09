@@ -12,7 +12,7 @@ def banner ():
 / /_/ / /_/ /  __/ / / / _, _/  __/ /_/ / / /  /  __/ /__/ /_  
 \____/ .___/\___/_/ /_/_/ |_|\___/\__,_/_/_/   \___/\___/\__/  
     /_/                                          Author:jhonson              
-                                                 Email:wannaajhonson@gmail.com
+                                                 
 
 '''
      print(Fore.YELLOW + Style.BRIGHT +f'{ban}' + Style.RESET_ALL+'\n\n') 
