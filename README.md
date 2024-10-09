@@ -2,7 +2,7 @@
 
 ## Installation 🚀
 
-<code>git clone https://github.com/Jhonsonwannaa/Open-redirect</code>
+<code>git clone https://github.com/dream434/Open-redirect</code>
 
 
 <code>cd Open-redirect </code>
