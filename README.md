@@ -1,26 +1,38 @@
 # Open-redirect
 
-## Installation 🚀
-
-<code>git clone https://github.com/dream434/Open-redirect</code>
 
 
-<code>cd Open-redirect </code>
+# Installation et Exécution du script 💻
+### Prérequis
 
+Avant de commencer, assurez-vous que vous avez les outils suivants installés sur votre machine :
 
-<code>pip install -r requirements.txt </code>
+- **Python 3.x**  
+- **Git**  
+- **pip** (pour gérer les dépendances Python)
 
-## Usage 🎮
+### Étapes d'Installation
 
+1. **Cloner le dépôt**  
+   Utilisez `git` pour cloner le dépôt :
 
-<code>python3 redirect.py -list urls.txt -url google.com </code>
+   ```bash
+   git clone https://github.com/dream434/Open-redirect/
+   ```
 
-<code>python3 exploit.py http://exemple.com  30 </code>
+ 2. **Accéder au répertoire du projet**
+     ```bash
+     cd Open-redirect
+      ```
 
-## Warning  ⚠️
-
-To use this tool for legal purposes 
-
+ 3. **Installer les dépendances** 📥
+      ```bash
+      pip install -r requirements.txt
+       ```
+ 4.  **Lancer l'application**
+      ```bash
+      python3 redirect.py -list urls.txt -url google.com
+      ```
 
 
 
